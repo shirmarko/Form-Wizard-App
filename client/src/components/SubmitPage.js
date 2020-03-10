@@ -47,7 +47,7 @@ class SubmitPage extends Component {
   }
 
   // update the userInputs of the form
-  handleSubmit = e => {
+  handleSubmit = () => {
     if (!this.isValid()) {
       this.setState({ errorAlert: true });
     } else {
@@ -90,20 +90,20 @@ class SubmitPage extends Component {
     }
   };
 
-  handleInputChange = e => {
+  handleInputChange = event => {
     //the field name is alredy in the userInputs array
-    if (this.state.userInputsNames.includes(e.target.name)) {
-      const index = this.state.userInputsNames.indexOf(e.target.name);
+    if (this.state.userInputsNames.includes(event.target.name)) {
+      const index = this.state.userInputsNames.indexOf(event.target.name);
       let userInputs = [...this.state.userInputs];
-      userInputs[index] = e.target.value;
+      userInputs[index] = event.target.value;
       this.setState({ userInputs });
     }
     //the field name does not exist
     else {
       const userInputs = [...this.state.userInputs];
       const userInputsNames = [...this.state.userInputsNames];
-      userInputsNames.push(e.target.name);
-      userInputs.push(e.target.value);
+      userInputsNames.push(event.target.name);
+      userInputs.push(event.target.value);
       this.setState({ userInputs, userInputsNames });
     }
   };
@@ -119,7 +119,7 @@ class SubmitPage extends Component {
               id={field.fieldName}
               name={field.fieldName}
               type={field.fieldType}
-              onChange={e => this.handleInputChange(e)}
+              onChange={event => this.handleInputChange(event)}
               margin="normal"
             />
           </div>
@@ -127,7 +127,7 @@ class SubmitPage extends Component {
         <button
           class="btn btn-outline-primary"
           type="submit"
-          onClick={e => this.handleSubmit(e)}
+          onClick={() => this.handleSubmit()}
         >
           Submit
         </button>
@@ -147,7 +147,6 @@ class SubmitPage extends Component {
         </Alert>
         <br />
 
-        {/* success modal window */}
         <Modal isOpen={this.state.moralVisible}>
           <ModalHeader>Your form was successfully submitted </ModalHeader>
           <ModalFooter>
