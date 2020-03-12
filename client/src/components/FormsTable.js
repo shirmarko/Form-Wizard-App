@@ -13,7 +13,7 @@ class FormTable extends Component {
   }
 
   componentDidMount = () => {
-    fetch("/api/forms")
+    fetch("/api/login")
       .then(res => res.json())
       .then(forms =>
         this.setState({ forms }, () =>

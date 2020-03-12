@@ -13,7 +13,7 @@ import SubmitPage from "./components/SubmitPage";
 import SubmissionsPage from "./components/SubmissionsPage";
 import AddFormPage from "./components/AddFormPage";
 import LoginWindow from "./components/loginWindow";
-import CallBack from "./components/auth0_callback";
+// import CallBack from "./components/auth0_callback";
 
 class App extends Component {
   render() {
@@ -32,9 +32,9 @@ class App extends Component {
 
         <Router>
           <Switch>
-            <Route exact path="/login" component={LoginWindow} />
-            <Route exact path="/auth0_callback" component={CallBack} />
-            <Route exact path="/" component={FormsTable} />
+            <Route exact path="/" component={LoginWindow} />
+            {/* <Route exact path="/auth0_callback" component={CallBack} /> */}
+            <Route exact path="/home" component={FormsTable} />
             <Route path="/SubmitPage/:id" component={SubmitPage} />
             <Route path="/SubmissionsPage/:id" component={SubmissionsPage} />
             <Route path="/AddForm" component={AddFormPage} />

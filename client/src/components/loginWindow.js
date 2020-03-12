@@ -1,19 +1,19 @@
-import React from "react";
-import { Button } from "reactstrap";
+import React, { Component } from "react";
 
-// import GitHubLogin from "react-github-login";
-import { useAuth } from "react-use-auth";
+class LoginWingow extends Component {
+  Login = () => {
+    fetch("/api/login");
+  };
 
-const LoginWingow = () => {
-  //   const { isAuthenticated, login, logout } = useAuth();
-  const { login, logout } = useAuth();
-
-  return (
-    <nav>
-      <Button onClick={() => login()}>Login</Button>
-      <Button onClick={() => logout()}>Logout</Button>
-    </nav>
-  );
-};
+  render() {
+    return (
+      <body>
+        <a href="https://github.com/login/oauth/authorize?client_id=675b21a693ede89510cb">
+          Login with github
+        </a>
+      </body>
+    );
+  }
+}
 
 export default LoginWingow;
