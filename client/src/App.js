@@ -12,6 +12,8 @@ import FormsTable from "./components/FormsTable";
 import SubmitPage from "./components/SubmitPage";
 import SubmissionsPage from "./components/SubmissionsPage";
 import AddFormPage from "./components/AddFormPage";
+import LoginWindow from "./components/loginWindow";
+import CallBack from "./components/auth0_callback";
 
 class App extends Component {
   render() {
@@ -27,22 +29,17 @@ class App extends Component {
             </Jumbotron>
           </Col>
         </Row>
-        {/* <Row>
-          <Col>
-            <h1 className="display-5">My Forms</h1>
-          </Col>
-        </Row> */}
+
         <Router>
           <Switch>
+            <Route exact path="/login" component={LoginWindow} />
+            <Route exact path="/auth0_callback" component={CallBack} />
             <Route exact path="/" component={FormsTable} />
             <Route path="/SubmitPage/:id" component={SubmitPage} />
             <Route path="/SubmissionsPage/:id" component={SubmissionsPage} />
             <Route path="/AddForm" component={AddFormPage} />
           </Switch>
         </Router>
-
-        {/* <FormsTable />
-          <SubmitPage /> */}
       </Container>
     );
   }

@@ -17,11 +17,14 @@
   "author": "shir markovits",
   "license": "ISC",
   "dependencies": {
+    "auth0-js": "^9.12.2",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-bootstrap": "^1.0.0-beta.17",
+    "react-use-auth": "^0.5.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
