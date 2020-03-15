@@ -1,32 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Forms = require("../models/forms");
-const axios = require("axios");
-
-const clientID = "675b21a693ede89510cb";
-const clientSecret = "b12e80c332a5cf3a2b53d6b5c3db23f8b1767e5d";
-
-// for getting the
-router.get("/home:code", (req, res) => {
-  // The req.query object has the query params that were sent to this route.
-  const requestToken = req.query.code;
-  //pass the code to githab
-  axios({
-    method: "post",
-    url: `https://github.com/login/oauth/access_token?client_id=${clientID}&client_secret=${clientSecret}&code=${requestToken}`,
-    // for JSON
-    headers: {
-      accept: "application/json"
-    }
-  }).then(response => {
-    //get the token
-    const accessToken = response.data.access_token;
-    console.log(accessToken);
-    // redirect the user to the home page, along with the access token
-    res.redirect(`/home.html?access_token=${accessToken}`);
-    //use the accessToken
-  });
-});
+// const axios = require("axios");
 
 //get a list of forms from the db
 router.get("/forms", function(req, res, next) {

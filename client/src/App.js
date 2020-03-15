@@ -12,7 +12,6 @@ import FormsTable from "./components/FormsTable";
 import SubmitPage from "./components/SubmitPage";
 import SubmissionsPage from "./components/SubmissionsPage";
 import AddFormPage from "./components/AddFormPage";
-import LoginWindow from "./components/loginWindow";
 // import CallBack from "./components/auth0_callback";
 
 class App extends Component {
@@ -20,21 +19,19 @@ class App extends Component {
     return (
       <Container fluid className="centered">
         <Navbar dark color="dark">
-          <NavbarBrand href="/">MyFormBuilder</NavbarBrand>
+          <NavbarBrand href="/">MyFormWizard</NavbarBrand>
         </Navbar>
         <Row>
           <Col>
             <Jumbotron>
-              <h1 className="display-3">MY FORM BUILDER APP</h1>
+              <h1 className="display-3">MY FORM WIZARD APP</h1>
             </Jumbotron>
           </Col>
         </Row>
 
         <Router>
           <Switch>
-            <Route exact path="/" component={LoginWindow} />
-            {/* <Route exact path="/auth0_callback" component={CallBack} /> */}
-            <Route exact path="/home" component={FormsTable} />
+            <Route exact path="/" component={FormsTable} />
             <Route path="/SubmitPage/:id" component={SubmitPage} />
             <Route path="/SubmissionsPage/:id" component={SubmissionsPage} />
             <Route path="/AddForm" component={AddFormPage} />
