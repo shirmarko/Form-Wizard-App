@@ -17,7 +17,7 @@
   "author": "shir markovits",
   "license": "ISC",
   "dependencies": {
-    "auth0-js": "^9.12.2",
+    "auth0-js": "^9.13.2",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
